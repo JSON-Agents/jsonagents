@@ -15,8 +15,6 @@ export default function HomePage() {
             <a href="/getting-started" className="text-white hover:text-gray-200 text-base font-medium">Getting Started</a>
             <a href="/schema" className="text-white hover:text-gray-200 text-base font-medium">Schema</a>
             <a href="/docs" className="text-white hover:text-gray-200 text-base font-medium">Docs</a>
-            <a href="/cli" className="text-white hover:text-gray-200 text-base font-medium">CLI</a>
-            <a href="/validators" className="text-white hover:text-gray-200 text-base font-medium">Validators</a>
             <a href="https://github.com/JSON-AGENTS/Standard" className="text-white hover:text-gray-200 flex items-center gap-2" aria-label="GitHub">
               <Github size={24} strokeWidth={2} />
             </a>
@@ -83,7 +81,7 @@ export default function HomePage() {
             <div className="flex flex-col text-center">
               <h2 className="text-2xl mb-5 text-gray-900 font-light">CLI Tool</h2>
               <p className="text-gray-700 mb-7 leading-relaxed flex-grow text-base">
-                Command-line tool with 9 commands for validation, conversion, formatting, and testing manifests.
+                Command-line tool for validation, conversion, formatting, and testing manifests.
               </p>
               <div>
                 <a
@@ -98,7 +96,7 @@ export default function HomePage() {
             <div className="flex flex-col text-center">
               <h2 className="text-2xl mb-5 text-gray-900 font-light">Validators</h2>
               <p className="text-gray-700 mb-7 leading-relaxed flex-grow text-base">
-                Production-ready validators for Python and TypeScript with 100% test coverage and full API support.
+                Production-ready validators for Python and TypeScript.
               </p>
               <div>
                 <a

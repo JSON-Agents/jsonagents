@@ -1,6 +1,7 @@
 "use client";
 
 import { Github, CheckCircle } from "lucide-react";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 export default function ValidatorsPage() {
   return (
@@ -22,25 +23,17 @@ export default function ValidatorsPage() {
         </div>
       </nav>
 
+      <Breadcrumbs items={[{ label: "Validators" }]} />
+
       {/* Hero Section */}
-      <section className="bg-slate-900 py-16">
+      <section className="bg-gray-200 py-16">
         <div className="w-full max-w-4xl mx-auto px-8">
-          <div className="flex items-center gap-4 mb-6">
-            <CheckCircle size={48} className="text-white" strokeWidth={2} />
-            <h1 className="text-5xl font-bold text-white">Validators</h1>
-          </div>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Production-ready validators for Python and TypeScript. Validate JSON Agents manifests, policy expressions, and ajson:// URIs.
+          <h1 className="text-5xl mb-4 text-gray-900" style={{ fontFamily: '"Momo Trust Display", sans-serif', fontWeight: 400 }}>
+            Validators
+          </h1>
+          <p className="text-xl text-gray-700">
+            Production-ready validators for Python and TypeScript
           </p>
-          <div className="flex gap-4">
-            <a
-              href="https://github.com/JSON-AGENTS/Jsonagents/tree/main/validators"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 text-sm font-bold rounded hover:bg-gray-100 transition"
-            >
-              <Github size={20} />
-              VIEW ON GITHUB
-            </a>
-          </div>
         </div>
       </section>
 
@@ -48,20 +41,31 @@ export default function ValidatorsPage() {
       <section className="py-16">
         <div className="w-full max-w-4xl mx-auto px-8">
           
+          {/* GitHub Link */}
+          <div className="mb-8">
+            <a
+              href="https://github.com/JSON-AGENTS/Jsonagents/tree/main/validators"
+              className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 transition"
+            >
+              <Github size={20} />
+              <span className="text-sm font-medium">View source on GitHub</span>
+            </a>
+          </div>
+
           {/* Installation */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Installation</h2>
+            <h2 className="text-3xl text-gray-900 font-light mb-6">Installation</h2>
             
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Python</h3>
-            <div className="bg-slate-900 text-white p-6 rounded-lg font-mono text-sm mb-6">
-              <div className="mb-2"># Install via pip (coming soon)</div>
-              <div className="text-gray-400">Coming soon.</div>
+            <h3 className="text-xl font-medium text-gray-900 mb-4">Python</h3>
+            <div className="bg-gray-50 text-gray-800 p-6 rounded-lg font-mono text-sm mb-6">
+              <div className="mb-2 text-gray-600"># Install via pip (coming soon)</div>
+              <div>Coming soon.</div>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">TypeScript/JavaScript</h3>
-            <div className="bg-slate-900 text-white p-6 rounded-lg font-mono text-sm mb-4">
-              <div className="mb-2"># Install via npm (coming soon)</div>
-              <div className="text-gray-400">Coming soon.</div>
+            <h3 className="text-xl font-medium text-gray-900 mb-4">TypeScript/JavaScript</h3>
+            <div className="bg-gray-50 text-gray-800 p-6 rounded-lg font-mono text-sm mb-4">
+              <div className="mb-2 text-gray-600"># Install via npm (coming soon)</div>
+              <div>Coming soon.</div>
             </div>
             
             <p className="text-sm text-gray-600 mt-4">
@@ -71,11 +75,11 @@ export default function ValidatorsPage() {
 
           {/* Quick Start */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Quick Start</h2>
+            <h2 className="text-3xl text-gray-900 font-light mb-6">Quick Start</h2>
             
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Python Validator</h3>
-            <div className="bg-slate-900 text-white p-6 rounded-lg font-mono text-sm mb-6 overflow-x-auto">
-              <pre className="whitespace-pre-wrap">
+            <h3 className="text-xl font-medium text-gray-900 mb-4">Python Validator</h3>
+            <div className="bg-gray-50 p-6 rounded-lg font-mono text-sm mb-6 overflow-x-auto">
+              <pre className="whitespace-pre-wrap text-gray-800">
 {`from jsonagents import validate
 
 agent_data = {
@@ -89,9 +93,9 @@ print(result.valid)`}
               </pre>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">TypeScript Validator</h3>
-            <div className="bg-slate-900 text-white p-6 rounded-lg font-mono text-sm mb-6 overflow-x-auto">
-              <pre className="whitespace-pre-wrap">
+            <h3 className="text-xl font-medium text-gray-900 mb-4">TypeScript Validator</h3>
+            <div className="bg-gray-50 p-6 rounded-lg font-mono text-sm mb-6 overflow-x-auto">
+              <pre className="whitespace-pre-wrap text-gray-800">
 {`import { validate } from '@jsonagents/validator';
 
 const agentData = {
@@ -108,22 +112,22 @@ console.log(result.valid);`}
 
           {/* Key Features */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Features</h2>
+            <h2 className="text-3xl text-gray-900 font-light mb-6">Key Features</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Schema Validation</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Schema Validation</h3>
                 <p className="text-gray-600">Comprehensive validation against JSON Agents specification</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Policy Enforcement</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Policy Enforcement</h3>
                 <p className="text-gray-600">Validate agent policies and security constraints</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">URI Validation</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">URI Validation</h3>
                 <p className="text-gray-600">Validate JSON Agents URI scheme compliance</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Detailed Error Reports</h3>
+                <h3 className="text-lg font-medium text-gray-900 mb-2">Detailed Error Reports</h3>
                 <p className="text-gray-600">Clear error messages with field-level validation details</p>
               </div>
             </div>
@@ -131,12 +135,12 @@ console.log(result.valid);`}
 
           {/* Available Validators */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Available Validators</h2>
+            <h2 className="text-3xl text-gray-900 font-light mb-6">Available Validators</h2>
             <div className="space-y-6">
               <div className="border border-gray-200 rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600" />
-                  <h3 className="text-xl font-semibold text-gray-900">Python Validator</h3>
+                  <CheckCircle className="h-6 w-6 text-slate-700" />
+                  <h3 className="text-xl font-medium text-gray-900">Python Validator</h3>
                 </div>
                 <p className="text-gray-600 mb-4">
                   Full-featured Python implementation with CLI support and comprehensive testing
@@ -151,8 +155,8 @@ console.log(result.valid);`}
 
               <div className="border border-gray-200 rounded-lg p-6">
                 <div className="flex items-center gap-3 mb-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <h3 className="text-xl font-semibold text-gray-900">TypeScript Validator</h3>
+                  <CheckCircle className="h-6 w-6 text-slate-700" />
+                  <h3 className="text-xl font-medium text-gray-900">TypeScript Validator</h3>
                 </div>
                 <p className="text-gray-600 mb-4">
                   Type-safe TypeScript implementation for Node.js and browser environments
@@ -169,16 +173,16 @@ console.log(result.valid);`}
 
           {/* Running Tests */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Running Tests</h2>
+            <h2 className="text-3xl text-gray-900 font-light mb-6">Running Tests</h2>
             
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">Python</h3>
-            <div className="bg-slate-900 text-white p-4 rounded font-mono text-sm mb-6">
+            <h3 className="text-xl font-medium text-gray-900 mb-4">Python</h3>
+            <div className="bg-gray-50 text-gray-800 p-4 rounded font-mono text-sm mb-6">
               <div>cd validators/python</div>
               <div>pytest</div>
             </div>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">TypeScript</h3>
-            <div className="bg-slate-900 text-white p-4 rounded font-mono text-sm">
+            <h3 className="text-xl font-medium text-gray-900 mb-4">TypeScript</h3>
+            <div className="bg-gray-50 text-gray-800 p-4 rounded font-mono text-sm">
               <div>cd validators/typescript</div>
               <div>npm test</div>
             </div>
@@ -186,15 +190,15 @@ console.log(result.valid);`}
 
           {/* Links */}
           <div className="bg-gray-100 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Resources</h2>
+            <h2 className="text-2xl text-gray-900 font-light mb-4">Resources</h2>
             <div className="space-y-3">
-              <a href="https://github.com/JSON-AGENTS/Jsonagents/tree/main/validators" className="flex items-center gap-2 text-blue-600 hover:underline">
+              <a href="https://github.com/JSON-AGENTS/Jsonagents/tree/main/validators" className="flex items-center gap-2 text-slate-700 hover:text-slate-900 transition">
                 <Github size={20} />
                 View validator source code on GitHub
               </a>
-              <a href="/cli" className="text-blue-600 hover:underline block">→ Check out the CLI Tool</a>
-              <a href="/getting-started" className="text-blue-600 hover:underline block">→ Getting Started Guide</a>
-              <a href="/schema" className="text-blue-600 hover:underline block">→ View JSON Schema</a>
+              <a href="/cli" className="text-slate-700 hover:text-slate-900 transition block">→ Check out the CLI Tool</a>
+              <a href="/getting-started" className="text-slate-700 hover:text-slate-900 transition block">→ Getting Started Guide</a>
+              <a href="/schema" className="text-slate-700 hover:text-slate-900 transition block">→ View JSON Schema</a>
             </div>
           </div>
 
@@ -204,7 +208,7 @@ console.log(result.valid);`}
       {/* Footer */}
       <footer className="bg-white pt-6 pb-8 border-t">
         <div className="w-full max-w-3xl mx-auto px-8 text-center">
-          <p className="text-sm text-gray-600">Part of the <a href="/" className="text-blue-600 hover:underline">JSON Agents</a> specification</p>
+          <p className="text-sm text-gray-600">Part of the <a href="/" className="text-slate-700 hover:text-slate-900 transition">JSON Agents</a> specification</p>
         </div>
       </footer>
     </div>
