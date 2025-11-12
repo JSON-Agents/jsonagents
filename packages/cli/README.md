@@ -178,29 +178,6 @@ jsonagents search routing
 jsonagents fetch ajson://jsonagents.org/examples/router-hub
 ```
 
-## TUI Features
-
-The interactive TUI provides:
-
-- **Visual Editor** - Edit manifests with a guided interface
-- **Real-time Validation** - See validation errors as you type
-- **Template Browser** - Browse and select from templates
-- **Component Manager** - Add/remove capabilities, tools, and profiles
-- **Dependency Viewer** - Visualize agent dependencies
-- **Schema Browser** - Explore the JSON Agents schema
-- **Quick Actions** - Common operations with keyboard shortcuts
-
-### Keyboard Shortcuts
-
-- `↑/↓` - Navigate
-- `Enter` - Select
-- `Tab` - Next field
-- `Esc` - Go back
-- `Ctrl+S` - Save
-- `Ctrl+Q` - Quit
-- `Ctrl+V` - Validate
-- `Ctrl+H` - Help
-
 ## Development
 
 ```bash

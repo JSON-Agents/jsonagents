@@ -25,7 +25,6 @@ This project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
   - Interactive prompts with Inquirer
   - File watching with Chokidar
   - Commander.js framework
-  - 360 dependencies, 0 vulnerabilities
   - npm package `@jsonagents/cli`
 
 - **Documentation Website** (`apps/website/`)
@@ -51,14 +50,6 @@ This project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
   - Workspace configuration for apps and packages
   - Shared TypeScript and ESLint configurations
   - Build caching and dependency management
-
-### Known Issues
-
-- TUI component temporarily disabled due to React type version conflicts
-  - Ink framework requires React 18 types
-  - Next.js website requires React 19 types
-  - All TUI functionality available through CLI commands
-  - TUI code preserved in `tui.tsx.skip` for future reintegration
 
 ---
 

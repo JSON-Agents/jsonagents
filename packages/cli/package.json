@@ -1,7 +1,7 @@
 {
   "name": "@jsonagents/cli",
   "version": "1.0.1",
-  "description": "Comprehensive CLI tool for JSON Agents with TUI",
+  "description": "Comprehensive CLI tool for JSON Agents",
   "main": "dist/index.js",
   "bin": {
     "jsonagents": "./dist/cli.js"
@@ -17,7 +17,6 @@
   "keywords": [
     "json-agents",
     "cli",
-    "tui",
     "ai",
     "agents",
     "validation"
@@ -34,15 +33,9 @@
     "commander": "^11.1.0",
     "cosmiconfig": "^9.0.0",
     "fast-glob": "^3.3.2",
-    "ink": "^4.4.1",
-    "ink-select-input": "^5.0.0",
-    "ink-spinner": "^5.0.0",
-    "ink-table": "^3.1.0",
-    "ink-text-input": "^5.0.1",
     "inquirer": "^8.2.6",
     "js-yaml": "^4.1.0",
     "ora": "^5.4.1",
-    "react": "^18.2.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
@@ -50,7 +43,6 @@
     "@types/jest": "^29.5.11",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.10.5",
-    "@types/react": "^18.3.26",
     "eslint": "^8.56.0",
     "jest": "^29.7.0",
     "ts-jest": "^29.1.1",
