@@ -8,8 +8,8 @@ export default function HomePage() {
       {/* Navigation */}
       <nav className="bg-slate-900">
         <div className="w-full max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-          <a href="/">
-            <img src="/images/jsonagents-no-background-logo.webp" alt="JSON AGENTS" className="h-8 invert" />
+          <a href="/" className="text-white text-2xl font-bold">
+            JSON Agents
           </a>
           <div className="flex space-x-8">
             <a href="/getting-started" className="text-white hover:text-gray-200 text-base font-medium">Getting Started</a>
@@ -26,11 +26,9 @@ export default function HomePage() {
       <section className="bg-slate-900 py-32">
         <div className="w-full max-w-3xl mx-auto px-8 text-center">
 
-          <img
-            src="/images/jsonagents-no-background-logo.webp"
-            alt="JSON AGENTS"
-            className="mx-auto mb-6 w-auto h-14 invert"
-          />
+          <h1 className="text-6xl font-bold text-white mb-6">
+            JSON Agents
+          </h1>
 
           <p className="text-lg text-white mb-8 leading-relaxed">
             A universal JSON specification for AI agents
