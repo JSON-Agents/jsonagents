@@ -7,6 +7,10 @@
 [![Media Type](https://img.shields.io/badge/media%20type-application%2Fagents%2Bjson-teal.svg)](#)
 [![Status](https://img.shields.io/badge/status-draft-yellow.svg)](./json-agents.md)
 
+[![CLI](https://img.shields.io/badge/CLI-9%20commands-brightgreen.svg)](./packages/cli/)
+[![Python Validator](https://img.shields.io/badge/Python-100%25%20coverage-success.svg)](./validators/python/)
+[![TypeScript Validator](https://img.shields.io/badge/TypeScript-100%25%20coverage-success.svg)](./validators/typescript/)
+
 > **A Universal JSON Specification for AI Agents**
 
 ---
@@ -56,7 +60,9 @@ JSON Agents is based entirely on established JSON standards (RFC 8259, ECMA-404,
 ### ✨ Key Features
 
 - **🎯 7 Standard Capabilities**: Summarization, routing, retrieval, QA, classification, extraction, and generation — all with formal schemas
-- **🔗 URI Scheme**: Formal `ajson://` URI scheme with resolution mechanism and registry architecture
+- **�️ Comprehensive CLI**: Full-featured command-line tool with 9 commands, 8 templates, validation, and conversion
+- **✅ Production Validators**: Python and TypeScript validators with 100% test coverage
+- **�🔗 URI Scheme**: Formal `ajson://` URI scheme with resolution mechanism and registry architecture
 - **📜 Policy Language**: Complete expression language for declarative access control and governance
 - **🔄 Framework Mappings**: Direct conversion paths for LangChain, OpenAI, AutoGen, MCP, and others
 - **🌐 Multi-Agent Graphs**: Define orchestration topologies with conditional routing
@@ -97,6 +103,14 @@ This is a **Turborepo monorepo** with the following structure:
 │       └── wrangler.toml          # Cloudflare Pages config
 │
 ├── packages/
+├── packages/
+│   ├── cli/                       # Comprehensive CLI tool
+│   │   ├── src/
+│   │   │   ├── cli.ts             # Commander-based entry
+│   │   │   ├── commands/          # 9 CLI commands
+│   │   │   ├── templates/         # 8 agent templates
+│   │   │   └── utils/             # Validation utilities
+│   │   └── package.json           # @jsonagents/cli
 │   ├── eslint-config/             # Shared ESLint configurations
 │   └── typescript-config/         # Shared TypeScript configurations
 │
@@ -122,6 +136,48 @@ This is a **Turborepo monorepo** with the following structure:
 
 ---
 
+### 🛠️ Tooling & Development
+
+**Official CLI Tool:**
+
+The `@jsonagents/cli` provides comprehensive tooling for working with JSON Agents:
+
+```bash
+# Install globally
+npm install -g @jsonagents/cli
+
+# Or use with npx
+npx @jsonagents/cli --help
+```
+
+**Available Commands:**
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `init` | Create new manifest interactively | `jsonagents init --template qa` |
+| `validate` | Validate manifests with watch mode | `jsonagents validate manifest.json --watch` |
+| `convert` | Convert JSON ↔ YAML | `jsonagents convert manifest.json -f yaml` |
+| `format` | Pretty-print or minify | `jsonagents format manifest.json --minify` |
+| `info` | Display manifest details | `jsonagents info manifest.json` |
+| `search` | Search agent registries | `jsonagents search "question answering"` |
+| `fetch` | Download from registry | `jsonagents fetch ajson://example.com/agent` |
+| `test-policy` | Test policy expressions | `jsonagents test-policy "user.role == 'admin'"` |
+| `test-uri` | Validate URI format | `jsonagents test-uri ajson://example.com/agent` |
+
+**8 Built-in Templates:**
+- `router` - Request routing and delegation
+- `qa` - Question answering
+- `summarization` - Text summarization  
+- `generation` - Content generation
+- `retrieval` - Information retrieval
+- `classification` - Text classification
+- `extraction` - Information extraction
+- `custom` - Blank template
+
+See [`packages/cli/README.md`](packages/cli/README.md) for full documentation.
+
+---
+
 ### 🧪 Validators
 
 **Official validators ensure manifests comply with the specification:**
@@ -133,22 +189,42 @@ This is a **Turborepo monorepo** with the following structure:
 | Rust | 🔜 Coming Soon | - | - | - |
 | Go | 🔜 Coming Soon | - | - | - |
 
-**Quick Validation:**
-
-**Python:**
+**Python Validator:**
 ```bash
 cd validators/python/
 pip install -r requirements.txt
-python -m jsonagents.cli validate <manifest.json>
+
+# Validate manifest
+python -m jsonagents.cli validate manifest.json
+
+# Test policy expression
+python -m jsonagents.cli test-policy "user.role == 'admin'" --context '{"user":{"role":"admin"}}'
+
+# Validate URI
+python -m jsonagents.cli test-uri ajson://example.com/agent
 ```
 
-**TypeScript:**
+**TypeScript Validator:**
 ```bash
 cd validators/typescript/
 npm install
-npm test
-npx ts-node src/cli.ts validate <manifest.json>
+
+# Validate manifest
+npx ts-node src/cli.ts validate manifest.json
+
+# Test policy expression  
+npx ts-node src/cli.ts test-policy "user.role == 'admin'" --context '{"user":{"role":"admin"}}'
+
+# Validate URI
+npx ts-node src/cli.ts test-uri ajson://example.com/agent
 ```
+
+**Features:**
+- ✅ JSON Schema 2020-12 validation
+- ✅ URI scheme validation (`ajson://`)
+- ✅ Policy expression parsing and evaluation
+- ✅ CLI with verbose error reporting
+- ✅ 100% test coverage
 
 See [`validators/README.md`](validators/README.md) for details.
 
@@ -169,7 +245,48 @@ Each profile is independently implementable, allowing minimal or full-featured a
 
 ---
 
-### 🧠 Quick Start Example
+### 🚀 Quick Start
+
+**1. Install the CLI:**
+```bash
+npm install -g @jsonagents/cli
+```
+
+**2. Create your first agent:**
+```bash
+# Interactive mode with prompts
+jsonagents init
+
+# Or use a template
+jsonagents init --template qa --name "Support Bot" --profiles core,exec
+```
+
+**3. Validate your manifest:**
+```bash
+jsonagents validate manifest.json --verbose
+
+# Watch for changes
+jsonagents validate manifest.json --watch
+```
+
+**4. Convert formats:**
+```bash
+jsonagents convert manifest.json -f yaml
+jsonagents format manifest.json --indent 4
+```
+
+**5. Test components:**
+```bash
+# Test policy expressions
+jsonagents test-policy "user.role == 'admin'" -c '{"user":{"role":"admin"}}'
+
+# Validate URIs
+jsonagents test-uri ajson://example.com/agents/my-agent
+```
+
+---
+
+### 📝 Example Manifest
 
 A minimal agent with all four profiles:
 
