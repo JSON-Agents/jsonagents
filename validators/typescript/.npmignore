@@ -1,0 +1,38 @@
+# Source files
+src/
+tests/
+*.test.ts
+*.spec.ts
+
+# Build artifacts
+*.tsbuildinfo
+tsconfig.json
+
+# Development files
+.eslintrc.json
+jest.config.js
+coverage/
+.turbo/
+
+# Version control
+.git
+.gitignore
+
+# Documentation (except README)
+docs/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
