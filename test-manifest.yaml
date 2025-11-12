@@ -1,0 +1,25 @@
+manifest_version: '1.0'
+agent:
+  id: urn:uuid:123e4567-e89b-12d3-a456-426614174000
+  name: Test QA Agent
+  version: 1.0.0
+  description: A test agent for Q&A tasks
+profiles:
+  - core
+capabilities:
+  - name: answer-questions
+    description: Answer user questions
+    input_schema:
+      type: object
+      properties:
+        question:
+          type: string
+      required:
+        - question
+    output_schema:
+      type: object
+      properties:
+        answer:
+          type: string
+      required:
+        - answer

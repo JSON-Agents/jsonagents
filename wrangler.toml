@@ -1,0 +1,7 @@
+name = "jsonagents-website"
+pages_build_output_dir = "apps/website/out"
+compatibility_date = "2024-11-11"
+
+# Cloudflare Pages configuration
+[env.production]
+NODE_VERSION = "18"
