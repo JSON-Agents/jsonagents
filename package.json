@@ -21,6 +21,9 @@
     "deploy:pages": "npm run build:website && wrangler pages deploy apps/website/out --project-name=jsonagents",
     "cli": "node packages/cli/dist/cli.js"
   },
+  "overrides": {
+    "@types/react": "^18.2.0"
+  },
   "devDependencies": {
     "prettier": "^3.1.0",
     "turbo": "^2.3.3"
